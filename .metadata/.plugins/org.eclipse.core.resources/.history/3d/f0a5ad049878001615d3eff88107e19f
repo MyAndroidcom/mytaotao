@@ -1,0 +1,11 @@
+package cpm.xhp.demo01;
+
+public interface BinaryTTree<T> {
+   boolean isEmpty();
+   int count();
+   int height();
+   void preOrder();
+   void inOrder();
+   void levelOrder();
+   
+}

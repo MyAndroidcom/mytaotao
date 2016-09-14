@@ -1,0 +1,5 @@
+package cpm.xhp.demo01;
+
+public class BinaryNode<T> {
+
+}

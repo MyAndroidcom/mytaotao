@@ -1,8 +1,14 @@
 package com.taotao.manage.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.github.abel533.entity.Example;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.taotao.manage.mapper.ItemMapper;
 import com.taotao.manage.pojo.Item;
 import com.taotao.manage.pojo.ItemDesc;
 
@@ -10,6 +16,9 @@ import com.taotao.manage.pojo.ItemDesc;
 public class ItemService extends BaseService2<Item> {
     @Autowired
     private ItemDescService itemDescService;
+    
+    @Autowired
+    private ItemMapper itemMapper;
     
     public void saveItem(Item item,String desc){
         //设置初始数据
@@ -21,5 +30,15 @@ public class ItemService extends BaseService2<Item> {
         itemDesc.setItemId(item.getId());
         itemDesc.setItemDesc(desc);
         this.itemDescService.save(itemDesc);
+    }
+
+    public PageInfo<Item> queryPageList(Integer page, Integer rows) {
+        Example example = new Example(Item.class);
+        example.setOrderByClause("updated DESC");
+        //设置分页参数
+        PageHelper.startPage(page,rows);
+        
+        List<Item> list = this.itemMapper.selectByExample(example);
+        return new PageInfo<>(list);
     }
 }

@@ -1,0 +1,5 @@
+package com.xhp.mybatis.pojo;
+
+public class User {
+
+}

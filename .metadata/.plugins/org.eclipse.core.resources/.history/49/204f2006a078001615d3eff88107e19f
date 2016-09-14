@@ -1,0 +1,18 @@
+package cpm.xhp.demo01;
+//二叉树二叉链表结点类
+public class BinaryNode<T> {
+    public T data;
+    public BinaryNode<T> left,right;
+    //构造结点，参数分别指定元素和左、右孩子结点
+    public BinaryNode(T node,BinaryNode<T> left,BinaryNode<T> right){
+        this.data = data;
+        this.left = left;
+        this.right = right;
+    }
+    public BinaryNode(T data){
+        this(data,null,null);   //构造指定值的叶子节点
+    }
+    public BinaryNode(){
+        this(null,null,null)
+    }
+    }

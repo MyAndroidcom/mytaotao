@@ -1,0 +1,13 @@
+package com.xhp.mybatis.bean;
+
+import java.util.List;
+
+/*
+ * 封装easyui的datagride格式的数据参数
+ * total     rows
+ * */
+
+public class EasyUIResult {
+    private Long total;
+    private List<?> rows;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>easyUI01</title>
+	<!-- 引入css文件，不限顺序 -->
+<link rel="stylesheet" href="../themes/default/easyui.css" type="text/css"></link>
+<link rel="stylesheet" href="../themes/icon.css" type="text/css"></link>
+	<!-- 引入js文件，有顺序限制 -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+
+	<!-- 所有的css文件和的有的js文件位置不限 -->
+</head>
+<body>
+
+</body>
+</html>

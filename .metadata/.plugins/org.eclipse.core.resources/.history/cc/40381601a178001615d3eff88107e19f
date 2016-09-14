@@ -1,0 +1,66 @@
+package cpm.xhp.demo01;
+
+public class BinaryTree<T> implements BinaryTTree<T>{
+
+    public BinaryNode<T> root;
+    public BinaryTree(){
+        this.root = null;
+    }
+    @Override
+    public boolean isEmpty() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public int count() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public int height() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    //先根次序遍历二叉树
+    @Override
+    public void preOrder() {
+        System.out.println("先根次序遍历");
+//        preOrder(root);
+        System.out.println();
+    }
+    public void preOrder(BinaryNode<T> p){
+        if(p!=null){
+            System.out.println(p.data.toString()+" ");
+            preOrder(p.left);
+            preOrder(p.right);
+        }
+    }
+
+    @Override
+    public void inOrder() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void levelOrder() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public BinaryNode<T> search(T key) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public BinaryNode<T> getParent(BinaryNode<T> node) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

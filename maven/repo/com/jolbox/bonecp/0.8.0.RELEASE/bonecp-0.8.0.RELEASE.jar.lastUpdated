@@ -1,0 +1,8 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Sep 08 19:18:33 CST 2016
+@default-jboss-public-repository-group-http\://repository.jboss.org/nexus/content/groups/public/.lastUpdated=1473333513302
+@default-spring-milestone-http\://s3.amazonaws.com/maven.springframework.org/milestone/.lastUpdated=1473333513300
+http\://repository.jboss.org/nexus/content/groups/public/.error=Could not transfer artifact com.jolbox\:bonecp\:jar\:0.8.0.RELEASE from/to jboss-public-repository-group (http\://repository.jboss.org/nexus/content/groups/public)\: The operation was cancelled.
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1473333513288
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact com.jolbox\:bonecp\:jar\:0.8.0.RELEASE from/to central (https\://repo.maven.apache.org/maven2)\: The operation was cancelled.
+http\://s3.amazonaws.com/maven.springframework.org/milestone/.error=Could not transfer artifact com.jolbox\:bonecp\:jar\:0.8.0.RELEASE from/to spring-milestone (http\://s3.amazonaws.com/maven.springframework.org/milestone)\: The operation was cancelled.

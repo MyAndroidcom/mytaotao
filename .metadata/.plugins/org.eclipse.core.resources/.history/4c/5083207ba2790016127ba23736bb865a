@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>json01</title>
+</head>
+<body>
+	<!-- json方式定义对象 -->
+	<script type="text/javascript">
+	var p = {id:1,name:"包包",sal:8000};
+		//属性可以''或""符号
+		//字符串必加''或""符号，其它类型不用加符号
+		document.write("编号:" + p.id + "<br/>");
+		document.write("姓名:" + p.name + "<br/>");
+		document.write("薪水:" + p.sal + "<br/>");
+	</script>
+</body>
+</html>

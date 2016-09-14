@@ -1,0 +1,87 @@
+package com.taotao.manage.test;
+
+import static org.junit.Assert.fail;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.taotao.manage.pojo.Item;
+import com.taotao.manage.service.BaseService2;
+
+public class BaseService2Test {
+    
+    private BaseService2 baseService;
+
+    @Before
+    public void setUp() throws Exception {
+        ApplicationContext ac = new ClassPathXmlApplicationContext(
+                "classpath:spring/applicationContext*.xml");
+        this.baseService = ac.getBean(BaseService2.class);;
+    }
+
+    @Test
+    public void testQueryById() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testQueryAll() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testQueryOne() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testQueryListByWhere() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testQueryPageListByWhere() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testSave() {
+        Item item = new Item(1L,"aa","cc",22L,10,"nnn","ss",100L,12);
+        Integer integer = this.baseService.save(item);
+        System.out.println(integer);
+    }
+
+    @Test
+    public void testSaveSelective() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testUpdate() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testUpdateSelective() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testDeleteById() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testDeleteByIds() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    public void testDeleteByWhere() {
+        fail("Not yet implemented");
+    }
+
+}

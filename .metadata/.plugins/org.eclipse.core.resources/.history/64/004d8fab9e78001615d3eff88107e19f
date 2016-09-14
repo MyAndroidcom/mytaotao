@@ -1,0 +1,7 @@
+package cpm.xhp.demo01;
+
+public class BinaryTree_make {
+    public static BinaryTree<String> make(){
+        
+    }
+}

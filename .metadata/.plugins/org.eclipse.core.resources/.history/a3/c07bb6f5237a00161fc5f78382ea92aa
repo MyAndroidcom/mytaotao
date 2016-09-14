@@ -1,0 +1,5 @@
+package com.xhp.mybatis.mapper;
+
+public class UserMapper {
+
+}

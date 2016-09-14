@@ -1,0 +1,5 @@
+package cpm.xhp.demo01;
+//二叉树二叉链表结点类
+public class BinaryNode<T> {
+
+}

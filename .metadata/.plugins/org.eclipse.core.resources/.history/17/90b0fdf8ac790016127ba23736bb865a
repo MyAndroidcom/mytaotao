@@ -1,0 +1,54 @@
+package com.xhp.spring.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping(value= "/pro")
+public class ProvinceCityAreaAction {
+    
+    @RequestMapping(value="/findCityByProvince")
+    public List<String> findCityByProvince(String province) throws Exception{
+        List<String> cityList = new ArrayList<String>();
+        if("广东".equals(province)){
+                cityList.add("广州");
+                cityList.add("深圳");
+                cityList.add("中山");
+        }else if("湖南".equals(province)){
+                cityList.add("长沙");
+                cityList.add("株洲");
+        }
+        return cityList;
+}
+    
+    /**
+     * 根据城市查询区域
+     */
+    @RequestMapping(value="/findAreaByCity")
+    public List<String> findAreaByCity(String city) throws Exception{
+            List<String> areaList = new ArrayList<String>();
+            if("广州".equals(city)){
+                    areaList.add("天河");
+                    areaList.add("白云");
+            }else if("深圳".equals(city)){
+                    areaList.add("宝安");
+                    areaList.add("南山");
+            }else if("中山".equals(city)){
+                    areaList.add("AA");
+                    areaList.add("BB");
+            }else if("长沙".equals(city)){
+                    areaList.add("CC");
+                    areaList.add("DD");
+            }else if("株洲".equals(city)){
+                    areaList.add("EE");
+                    areaList.add("FF");
+            }
+            return areaList;
+    }
+    
+    
+    
+}

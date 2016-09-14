@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Sep 08 19:53:07 CST 2016
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1473335587170
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact com.github.jsqlparser\:jsqlparser\:jar\:0.9.1 from/to central (https\://repo.maven.apache.org/maven2)\: The operation was cancelled.

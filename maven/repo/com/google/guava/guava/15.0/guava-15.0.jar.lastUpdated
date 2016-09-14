@@ -1,0 +1,8 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Sep 08 20:50:51 CST 2016
+@default-jboss-public-repository-group-http\://repository.jboss.org/nexus/content/groups/public/.lastUpdated=1473333513303
+@default-spring-milestone-http\://s3.amazonaws.com/maven.springframework.org/milestone/.lastUpdated=1473333513300
+https\://repo.maven.apache.org/maven2/.lastUpdated=1473339051738
+http\://repository.jboss.org/nexus/content/groups/public/.error=Could not transfer artifact com.google.guava\:guava\:jar\:15.0 from/to jboss-public-repository-group (http\://repository.jboss.org/nexus/content/groups/public)\: The operation was cancelled.
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1473333513289
+http\://s3.amazonaws.com/maven.springframework.org/milestone/.error=Could not transfer artifact com.google.guava\:guava\:jar\:15.0 from/to spring-milestone (http\://s3.amazonaws.com/maven.springframework.org/milestone)\: The operation was cancelled.

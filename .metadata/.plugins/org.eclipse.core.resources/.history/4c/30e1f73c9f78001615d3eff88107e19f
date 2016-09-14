@@ -1,0 +1,53 @@
+package cpm.xhp.demo01;
+
+public class BinaryTree<T> implements BinaryTTree<T>{
+
+    @Override
+    public boolean isEmpty() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public int count() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public int height() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void preOrder() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void inOrder() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void levelOrder() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public BinaryNode<T> search(T key) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public BinaryNode<T> getParent(BinaryNode<T> node) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

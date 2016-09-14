@@ -1,0 +1,5 @@
+package com.xhp.mybatis.controller;
+
+public class UserController {
+
+}

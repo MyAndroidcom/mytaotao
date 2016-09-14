@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Js 四种内置对象</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var nowStr = new Date().toLocaleString();
+		window.document.write("<font size='44' color='red'>" + str + "</font>");
+	</script>
+</body>
+</html>

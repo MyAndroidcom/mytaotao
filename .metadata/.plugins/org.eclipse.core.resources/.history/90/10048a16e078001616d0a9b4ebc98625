@@ -1,0 +1,24 @@
+package com.taotao.manage.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.taotao.manage.service.PropertieService;
+
+//图片上传
+@Controller
+@RequestMapping("/pic")
+public class PicUploadController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(PicUploadController.class);
+
+    private static final ObjectMapper mapper = new ObjectMapper();
+    
+    @Autowired
+    private PropertieService propertieService;
+    
+    
+}

@@ -1,0 +1,23 @@
+package com.xhp.bean;
+
+/**
+ * 实体，封装省份和城市
+ * @author AdminTC
+ */
+public class Bean {
+	private String province;//ʡ��
+	private String city;//����
+	public Bean(){}
+	public String getProvince() {
+		return province;
+	}
+	public void setProvince(String province) {
+		this.province = province;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+}

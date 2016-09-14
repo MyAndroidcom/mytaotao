@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>jQuery01</title>
+<script type="text/javascript" src="/js/jquery-1.8.2.js"/>
+
+	</head>
+	<body>
+	<input id="inputID" type="button" value="这就是jQuery库,写少代码，做多事情"/>
+
+	</body>
+	</html>
