@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 import com.github.abel533.entity.Example;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.taotao.common.bean.EasyUIResult;
 import com.taotao.manage.mapper.ItemMapper;
 import com.taotao.manage.pojo.Item;
 import com.taotao.manage.pojo.ItemDesc;
+import com.taotao.manage.pojo.ItemParam;
 
 @Service
 public class ItemService extends BaseService2<Item> {
@@ -18,10 +20,41 @@ public class ItemService extends BaseService2<Item> {
     private ItemDescService itemDescService;
     
     @Autowired
+    private ItemParamService itemParamService;
+    
+    @Autowired
     private ItemMapper itemMapper;
     
-    public void saveItem(Item item,String desc){
-        //设置初始数据
+    
+    //查询商品的service层
+    public EasyUIResult queryPageList(Integer page, Integer rows) {
+        Example example = new Example(Item.class);
+        example.setOrderByClause("updated DESC");
+        //设置分页参数
+        PageHelper.startPage(page,rows);
+        
+        List<Item> list = this.itemMapper.selectByExample(example);
+        PageInfo<Item> pageInfo =  new PageInfo<>(list);
+        return new EasyUIResult(pageInfo.getTotal(),pageInfo.getList());
+    }
+    
+    //编辑商品的service层
+    public void editItem(Item item, String desc) {
+        // 强制设置不能修改的字段为空
+        item.setStatus(null);
+        item.setCreated(null);
+        super.updateSelective(item);
+
+        // 修改商品描述数据
+        ItemDesc itemDesc = new ItemDesc();
+        itemDesc.setItemId(item.getId());
+        itemDesc.setItemDesc(desc);
+        this.itemDescService.updateSelective(itemDesc);
+        
+    }
+
+    public void saveItem(Item item, String desc, String itemParams) {
+            //设置初始数据
         item.setStatus(1);
         item.setId(null);
         super.save(item);
@@ -29,16 +62,13 @@ public class ItemService extends BaseService2<Item> {
         ItemDesc itemDesc = new ItemDesc();
         itemDesc.setItemId(item.getId());
         itemDesc.setItemDesc(desc);
+        //保存
         this.itemDescService.save(itemDesc);
-    }
-
-    public PageInfo<Item> queryPageList(Integer page, Integer rows) {
-        Example example = new Example(Item.class);
-        example.setOrderByClause("updated DESC");
-        //设置分页参数
-        PageHelper.startPage(page,rows);
         
-        List<Item> list = this.itemMapper.selectByExample(example);
-        return new PageInfo<>(list);
+        //保存规格数据
+        ItemParam itParam = new ItemParam();
+        itParam.setId(item.getId());
+        itParam.setParamData(itemParams);
+        this.itemParamService.save(itParam);
     }
 }

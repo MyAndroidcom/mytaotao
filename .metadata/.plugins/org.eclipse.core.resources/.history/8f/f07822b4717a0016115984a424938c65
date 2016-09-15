@@ -1,0 +1,41 @@
+package com.taotao.manage.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.taotao.manage.pojo.ItemParam;
+import com.taotao.manage.service.ItemParamService;
+
+@Controller
+@RequestMapping("item/param")
+public class ItemParamController {
+    @Autowired
+    private ItemParamService itemParamService;
+
+    /*
+     * 根据类目id查找规格参数模板
+     */
+    @RequestMapping(value="{itemCatId}")
+    public ResponseEntity<ItemParam> queryByItemId(
+            @PathVariable("itemCatId") Long itemCatId){
+        try{
+            ItemParam record = new ItemParam();
+            record.setItemCatId(itemCatId);
+            ItemParam itemParam = this.itemParamService.queryOne(record);
+            if(null == itemParam){
+                //404 not_found
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+            //200 该类目已经添加
+            return ResponseEntity.ok(itemParam);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+    }
+
+}

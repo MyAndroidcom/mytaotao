@@ -72,12 +72,14 @@
 	});
 	
 	function submitForm(){
+		//表单数据验证
 		if(!$('#itemeEditForm').form('validate')){
 			$.messager.alert('提示','表单还未填写完成!');
 			return ;
 		}
+		//price转换
 		$("#itemeEditForm [name=price]").val(eval($("#itemeEditForm [name=priceView]").val()) * 100);
-		itemEditEditor.sync();
+		itemEditEditor.sync();//同步把富文本编辑器中的内容同步到隐藏的区域
 		
 		var paramJson = [];
 		$("#itemeEditForm .params li").each(function(i,e){
@@ -103,10 +105,10 @@
 		//提交到后台的RESTful
 		$.ajax({
 		   type: "PUT",
-		   url: "/rest/item",
-		   data: $("#itemeEditForm").serialize(),
+		   url: "/rest/item/edit",
+		   data: $("#itemeEditForm").serialize(),  //把表单中的数据序列化，转换成k-v
 		   statusCode : {
-			   204 :  function(){
+			   204 :  function(){	//点击确定按钮执行
 				   $.messager.alert('提示','修改商品成功!','info',function(){
 						$("#itemEditWindow").window('close');
 						$("#itemList").datagrid("reload");

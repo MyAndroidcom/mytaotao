@@ -10,7 +10,7 @@ public class ItemParam extends BasePojo{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private Long itemCateId;
+    private Long itemCatId;
     private String paramData;
     public Long getId() {
         return id;
@@ -18,11 +18,11 @@ public class ItemParam extends BasePojo{
     public void setId(Long id) {
         this.id = id;
     }
-    public Long getItemCateId() {
-        return itemCateId;
+    public Long getItemCatId() {
+        return itemCatId;
     }
-    public void setItemCateId(Long itemCateId) {
-        this.itemCateId = itemCateId;
+    public void setItemCatId(Long itemCatId) {
+        this.itemCatId = itemCatId;
     }
     public String getParamData() {
         return paramData;
@@ -30,4 +30,5 @@ public class ItemParam extends BasePojo{
     public void setParamData(String paramData) {
         this.paramData = paramData;
     }
+    
 }

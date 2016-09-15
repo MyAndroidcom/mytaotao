@@ -1,5 +1,10 @@
 package com.taotao.manage.service;
 
-public class ItemParamService {
+import org.springframework.stereotype.Service;
+
+import com.taotao.manage.pojo.ItemParam;
+
+@Service
+public class ItemParamService extends BaseService2<ItemParam>{
 
 }

@@ -1,0 +1,50 @@
+package com.taotao.manage.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.abel533.entity.Example;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.taotao.common.bean.EasyUIResult;
+import com.taotao.manage.mapper.ItemMapper;
+import com.taotao.manage.pojo.Item;
+import com.taotao.manage.pojo.ItemDesc;
+
+@Service
+public class ItemService extends BaseService2<Item> {
+    @Autowired
+    private ItemDescService itemDescService;
+    
+    @Autowired
+    private ItemMapper itemMapper;
+    
+
+    public EasyUIResult queryPageList(Integer page, Integer rows) {
+        Example example = new Example(Item.class);
+        example.setOrderByClause("updated DESC");
+        //设置分页参数
+        PageHelper.startPage(page,rows);
+        
+        List<Item> list = this.itemMapper.selectByExample(example);
+        PageInfo<Item> pageInfo =  new PageInfo<>(list);
+        return new EasyUIResult(pageInfo.getTotal(),pageInfo.getList());
+    }
+    
+    //编辑商品的service层
+    public void editItem(Item item, String desc) {
+      //设置初始数据
+        item.setStatus(1);
+        item.setId(null);
+        super.updateSelective(item);
+
+        // 修改商品描述数据
+        ItemDesc itemDesc = new ItemDesc();
+        itemDesc.setItemId(item.getId());
+        itemDesc.setItemDesc(desc);
+        this.itemDescService.updateSelective(itemDesc);
+        
+    }
+}

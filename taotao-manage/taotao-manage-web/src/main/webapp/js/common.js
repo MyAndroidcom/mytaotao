@@ -191,6 +191,9 @@ var TT = TAOTAO = {
     	$(".panel-tool-close").click();
     },
     
+    
+    
+    //changeItemParam()此方法在item-add.jsp中回调，查找节点node的id,如果id存在则把字符串数据解析成json然后拼接成一个表格,动态生成一个表格 
     changeItemParam : function(node,formId){
     	
     	$.ajax({

@@ -67,6 +67,9 @@
 	var itemAddEditor ;
 	$(function(){
 		itemAddEditor = TAOTAO.createEditor("#itemAddForm [name=desc]");
+		
+		
+		//fun回调函数
 		var _data = {fun:function(node){
 			TAOTAO.changeItemParam(node, "itemAddForm");
 		}};

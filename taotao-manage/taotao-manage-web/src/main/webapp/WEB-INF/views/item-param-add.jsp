@@ -111,6 +111,7 @@
 				}
 			});
 			var url = "/rest/item/param/"+$("#itemParamAddTable [name=cid]").val();
+			console.log(url);
 			
 			$.ajax({
 				   type: "POST",
