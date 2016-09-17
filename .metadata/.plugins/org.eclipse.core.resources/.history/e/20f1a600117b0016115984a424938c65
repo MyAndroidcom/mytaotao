@@ -1,0 +1,5 @@
+package com.taotao.manage.pojo;
+
+public class ItemParamItem {
+
+}

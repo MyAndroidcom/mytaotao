@@ -1,0 +1,5 @@
+package com.taotao.web.controller.test.json;
+
+public class TestJson {
+
+}

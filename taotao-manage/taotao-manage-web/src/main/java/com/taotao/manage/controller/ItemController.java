@@ -75,7 +75,8 @@ public class ItemController {
      * 编辑商品信息
      * */
     @RequestMapping(value="/edit",method=RequestMethod.PUT)
-    public ResponseEntity<Void> editItem(Item item,@RequestParam("desc") String desc){
+    public ResponseEntity<Void> editItem(Item item,@RequestParam("desc") String desc,
+            String itemParams){
         try{
             if(LOGGER.isInfoEnabled()){
                 LOGGER.info("修改商品，item={},desc={}",item,desc);
@@ -84,7 +85,7 @@ public class ItemController {
                 //400
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             }
-            this.itemService.editItem(item,desc);
+            this.itemService.editItem(item,desc,itemParams);
             // 成功 204
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }catch(Exception e){

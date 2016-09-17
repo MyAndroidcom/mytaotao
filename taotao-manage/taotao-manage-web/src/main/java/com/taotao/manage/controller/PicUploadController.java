@@ -69,9 +69,9 @@ public class PicUploadController {
 
         // 生成图片的绝对引用地址
         String picUrl = StringUtils.replace(StringUtils.substringAfter(filePath, propertieService.REPOSITORY_PATH),
-                "\\", "/");
+                "\\", "/"); //  \images\2016\01\17\2016011704532743905941.jpg
         fileUploadResult.setUrl(propertieService.IMAGE_BASE_URL + picUrl);
-
+        //"http://localhost:8888\images\2016\01\17\2016011704532743905941.jpg
         File newFile = new File(filePath);
 
         // 写文件到磁盘

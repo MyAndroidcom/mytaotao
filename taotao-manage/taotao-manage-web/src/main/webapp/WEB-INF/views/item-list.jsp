@@ -65,7 +65,7 @@
         				itemEditEditor.html(_data.itemDesc);
         			});
         			
-        			//加载商品规格
+        			//加载商品规格,用于在编辑页面回显商品规格参数
         			$.ajax({
 					   type: "GET",
 					   url: "/rest/item/param/item/" + data.id,

@@ -34,7 +34,7 @@ public class ItemDescController {
                 //资源不存在404
                 return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
             }
-            System.out.println("商品描述==============================:"+itemDesc.getItemDesc());
+//            System.out.println("商品描述==============================:"+itemDesc.getItemDesc());
             //200
             return ResponseEntity.ok(itemDesc);
         }catch(Exception e){

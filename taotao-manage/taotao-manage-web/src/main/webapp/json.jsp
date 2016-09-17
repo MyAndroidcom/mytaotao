@@ -7,5 +7,5 @@
 	}else{
 	    out.print("{\"abc\":123}");
 	}
-	
+	/*  out.print(fun"({\"abc\":123})"); */
 %>

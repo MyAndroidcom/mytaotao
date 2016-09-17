@@ -1,0 +1,8 @@
+package com.taotao.manage.service.api;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ItemCatService {
+    
+}

@@ -1,0 +1,14 @@
+package com.taotao.web.controller.test.json;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+
+public class TestJson {
+    @RequestMapping("test.html")
+    public String testJson(String callback) {
+        // test("aa")
+        return callback + "(" + "aa" + ")";
+    }
+}

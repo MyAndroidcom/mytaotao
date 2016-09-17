@@ -1,0 +1,17 @@
+package com.taotao.manage.service;
+
+import org.springframework.stereotype.Service;
+
+import com.taotao.manage.pojo.ItemParamItem;
+
+
+@Service
+public class ItemParamItemService extends BaseService2<ItemParamItem>{
+
+    public void updateItemParamItem(Long itemID, String itemParams) {
+        //更新对象
+        ItemParamItem record = new ItemParamItem();
+        record.setParamData(itemParams);
+    }
+    
+}

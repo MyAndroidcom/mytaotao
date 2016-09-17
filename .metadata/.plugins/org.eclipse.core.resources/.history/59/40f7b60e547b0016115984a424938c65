@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test2-json=======</title>
+<script type="text/javascript">
+	function ssss(data){
+		alert(data);
+	}
+</script>
+<script type="text/javascript">
+ssss('aa');
+</script>
+</head>
+<body>
+
+</body>
+</html>

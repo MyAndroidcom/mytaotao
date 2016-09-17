@@ -63,6 +63,21 @@
 		<item value="410" key="y"/>
 		<item value="943" key="x"/>
 	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="F:\xhp\git\taotao-project\xhp-js"/>
+			<item value="F:\xhp\git\taotao-project\taotao-manage-pojo"/>
+			<item value="G:\BaiduYunDownload\23taotao商城项目\课前资料\day01（通用Mapper、RESTful Web Service）\开发资料\itcast-parent"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
 	<section name="MavenModuleWizardParentPage">
 		<list key="moduleName">
 			<item value="taotao-manage-web"/>
@@ -79,23 +94,9 @@
 			<item value="[name]"/>
 		</list>
 	</section>
-	<section name="MavenProjectImportWizardPage">
-		<list key="rootDirectory">
-			<item value="F:\xhp\git\taotao-project\xhp-js"/>
-			<item value="F:\xhp\git\taotao-project\taotao-manage-pojo"/>
-			<item value="G:\BaiduYunDownload\23taotao商城项目\课前资料\day01（通用Mapper、RESTful Web Service）\开发资料\itcast-parent"/>
-		</list>
-		<list key="projectNameTemplate">
-			<item value="[artifactId]"/>
-			<item value="[artifactId]-TRUNK"/>
-			<item value="[artifactId]-[version]"/>
-			<item value="[groupId].[artifactId]"/>
-			<item value="[groupId].[artifactId]-[version]"/>
-			<item value="[name]"/>
-		</list>
-	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.taotao.web"/>
 			<item value="com.xhp.manage"/>
 			<item value="com.taotao.parent"/>
 			<item value="com.taotao.manage"/>
@@ -105,6 +106,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="taotao-web"/>
 			<item value="xhp-usermanage"/>
 			<item value="taotao-parent"/>
 			<item value="taotao-manage-web"/>
@@ -123,8 +125,8 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
-			<item value="0.0.1-SNAPSHOT"/>
 			<item value="1.0.0-SNAPSHOT"/>
+			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
 </section>

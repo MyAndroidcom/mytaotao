@@ -13,6 +13,7 @@ import com.taotao.manage.mapper.ItemMapper;
 import com.taotao.manage.pojo.Item;
 import com.taotao.manage.pojo.ItemDesc;
 import com.taotao.manage.pojo.ItemParam;
+import com.taotao.manage.pojo.ItemParamItem;
 
 @Service
 public class ItemService extends BaseService2<Item> {
@@ -21,6 +22,9 @@ public class ItemService extends BaseService2<Item> {
     
     @Autowired
     private ItemParamService itemParamService;
+    
+    @Autowired
+    private ItemParamItemService itemParamItemService;
     
     @Autowired
     private ItemMapper itemMapper;
@@ -39,7 +43,7 @@ public class ItemService extends BaseService2<Item> {
     }
     
     //编辑商品的service层
-    public void editItem(Item item, String desc) {
+    public void editItem(Item item, String desc,String itemParams) {
         // 强制设置不能修改的字段为空
         item.setStatus(null);
         item.setCreated(null);
@@ -50,6 +54,9 @@ public class ItemService extends BaseService2<Item> {
         itemDesc.setItemId(item.getId());
         itemDesc.setItemDesc(desc);
         this.itemDescService.updateSelective(itemDesc);
+        
+        //修改商品规格参数数据
+        this.itemParamItemService.updateItemParamItem(item.getId(),itemParams);
         
     }
 
@@ -66,9 +73,9 @@ public class ItemService extends BaseService2<Item> {
         this.itemDescService.save(itemDesc);
         
         //保存规格数据
-        ItemParam itParam = new ItemParam();
-        itParam.setId(item.getId());
-        itParam.setParamData(itemParams);
-        this.itemParamService.save(itParam);
+        ItemParamItem itemParamItem = new ItemParamItem();
+        itemParamItem.setItemId(item.getId());
+        itemParamItem.setParamData(itemParams);
+        this.itemParamItemService.save(itemParamItem);
     }
 }
