@@ -3,7 +3,6 @@ INDEX VERSION 1.127+E:\taoato_pro23\.metadata\.plugins\org.eclipse.jdt.core
 3544200122.index
 2525182959.index
 2749138882.index
-2925594468.index
 932650983.index
 2044663227.index
 2320267855.index
@@ -43,9 +42,6 @@ INDEX VERSION 1.127+E:\taoato_pro23\.metadata\.plugins\org.eclipse.jdt.core
 3109012304.index
 3948125094.index
 2978061556.index
-3129382780.index
-3744445307.index
-4228082666.index
 3375953415.index
 1260194827.index
 78160716.index
@@ -53,6 +49,5 @@ INDEX VERSION 1.127+E:\taoato_pro23\.metadata\.plugins\org.eclipse.jdt.core
 1745400152.index
 1994994238.index
 1717196181.index
-3632778365.index
 1413480107.index
 1705377294.index
