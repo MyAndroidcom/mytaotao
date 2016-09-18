@@ -1,0 +1,17 @@
+package com.taotao.manage.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import redis.clients.jedis.ShardedJedisPool;
+
+@Service
+public class RedisService {
+    
+    @Autowired
+    private ShardedJedisPool shardedJedisPool;
+    
+    public String set(String key,String value){
+        
+    }
+}

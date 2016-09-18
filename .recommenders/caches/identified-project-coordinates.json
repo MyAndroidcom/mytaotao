@@ -1,1 +1,1 @@
-[[{"location":"D:\\Program Files\\Java\\jdk1.7.0_07","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.7"}},"jre:jre:1.7.0"]]
+[[{"location":"E:\\taoato_pro23\\taotao-web","type":"PROJECT","hints":{"PROJECT_NAME":"taotao-web"}},"com.taotao.web:taotao-web:1.0.0"],[{"location":"D:\\Program Files\\Java\\jdk1.7.0_07","type":"JRE","hints":{}},"jre:jre:1.7.0"],[{"location":"E:\\taoato_pro23\\maven\\repo\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.4.2\\jackson-databind-2.4.2.jar","type":"JAR","hints":{}},"com.fasterxml.jackson.core:jackson-databind:2.4.2"]]

@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1474080544926_2" label="mybatis01" name="mybatis01">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spring-mybatis-oracle" type="4"/>
+<item elementID="=spring01" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spring01" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1474085177225_3" label="itcast-httpclient" name="itcast-httpclient">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/itcast-httpclient" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1474163279711_5" label="itcast-redis" name="itcast-redis">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/itcast-redis" type="4"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1473326218926_0" label="Window Working Set" name="Aggregate for window 1473326218925"/>
 </workingSetManager>

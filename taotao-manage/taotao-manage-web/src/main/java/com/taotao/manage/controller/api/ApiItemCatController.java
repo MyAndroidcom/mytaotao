@@ -12,6 +12,7 @@ import com.taotao.manage.service.ItemCatService;
 
 @Controller
 @RequestMapping("api/item/cat")
+//URL_Serv: "http://localhost:8989/rest/api/item/cat?callback=category.getDataService",
 public class ApiItemCatController {
     
     @Autowired
@@ -24,7 +25,6 @@ public class ApiItemCatController {
     public ResponseEntity<ItemCatResult> queryItemCat(){
         try{
             ItemCatResult itemCatResult = this.itemCatService.queryAllToTree();
-            System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
             return ResponseEntity.ok(itemCatResult);
         }catch(Exception e){
             e.printStackTrace();

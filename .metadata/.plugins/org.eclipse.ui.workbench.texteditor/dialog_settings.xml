@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="273" key="DIALOG_WIDTH"/>
-		<item value="302" key="DIALOG_Y_ORIGIN"/>
+		<item value="309" key="DIALOG_Y_ORIGIN"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="173" key="DIALOG_X_ORIGIN"/>
+		<item value="-492" key="DIALOG_X_ORIGIN"/>
 		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="category" key="selection"/>
+		<item value="Url" key="selection"/>
 		<list key="findhistory">
-			<item value="category"/>
-			<item value="item-cat-all"/>
-			<item value="picFileUpload"/>
-			<item value="商品图片"/>
-			<item value="taotao-manage"/>
-			<item value="ItemParamItemService"/>
-			<item value="itemeEditForm"/>
-			<item value="itemDescService"/>
+			<item value="url"/>
+			<item value="ser"/>
+			<item value="_JD_ALLSORT"/>
+			<item value="lib-v1"/>
+			<item value="v1"/>
+			<item value="全部商品分类"/>
+			<item value="jredis"/>
+			<item value="ad1"/>
 		</list>
 		<list key="replacehistory">
 			<item value="taotao-web"/>

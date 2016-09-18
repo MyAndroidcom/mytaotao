@@ -30,7 +30,6 @@
 				<groupId>com.github.abel533</groupId>
 				<artifactId>mapper</artifactId>
 
-
 			</dependency>
 	</dependencies>
 </project>

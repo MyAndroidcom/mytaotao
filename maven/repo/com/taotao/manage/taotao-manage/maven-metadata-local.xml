@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.taotao.manage</groupId>
+  <artifactId>taotao-manage</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20160917075402</lastUpdated>
+  </versioning>
+</metadata>

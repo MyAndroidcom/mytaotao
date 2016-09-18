@@ -1,0 +1,70 @@
+package com.taotao.web.service;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.taotao.common.bean.EasyUIResult;
+import com.taotao.common.service.ApiService;
+import com.taotao.manage.pojo.Content;
+
+@Service
+public class IndexService {
+    @Autowired
+    private ApiService apiServie;
+
+    @Value("${TAOTAO_MANAGE_URL}")
+    private String TAOTAO_MANAGE_URL;
+
+    @Value("${INDEX_AD1_URL}")
+    private String INDEX_AD1_URL;
+
+    private static final ObjectMapper MAPPER = new ObjectMapper();
+    
+    /*{"total":6,"rows":[{"created":1474081365000,"updated":1474081365000,"id":6,"categoryId":null,"title":"朱莉","subTitle":null,"titleDesc":null,"url":"","pic":"http://localhost:8888/images/2016/09/17/201609171102351770882.jpg","pic2":"","content":""},
+     * {"created":1474081340000,"updated":1474081340000,"id":5,"categoryId":null,"title":"华为02","subTitle":null,"titleDesc":null,"url":"","pic":"http://localhost:8888/images/2016/09/17/2016091711021859203920.jpg","pic2":"","content":""},
+     * {"created":1474081324000,"updated":1474081324000,"id":4,"categoryId":null,"title":"华为","subTitle":null,"titleDesc":null,"url":"","pic":"http://localhost:8888/images/2016/09/17/2016091711020220705934.jpg","pic2":"","content":""},
+     * {"created":1474081292000,"updated":1474081292000,"id":3,"categoryId":null,"title":"小米 红米 3S 全网通 2GB内存 16GB ROM 经典深灰 移动联通电信4G手机 双卡双待","subTitle":null,"titleDesc":null,"url":"","pic":"http://localhost:8888/images/2016/09/17/2016091711012963502605.jpg","pic2":"","content":""},
+     * {"created":1474081253000,"updated":1474081253000,"id":2,"categoryId":null,"title":"iphone7","subTitle":null,"titleDesc":null,"url":"","pic":"http://localhost:8888/images/2016/09/17/2016091711003947003218.jpg","pic2":"http://localhost:8888/images/2016/09/17/2016091711005162101836.jpg","content":""},
+     * {"created":1474078273000,"updated":1474078273000,"id":1,"categoryId":null,"title":"啊啊啊","subTitle":null,"titleDesc":null,"url":"htttp://loacabiujnio.com","pic":"","pic2":"","content":""}]}*/
+    
+    public String queryIndexAD1(){
+        try{
+            String url = TAOTAO_MANAGE_URL + INDEX_AD1_URL;
+            String jsonData = this.apiServie.doGet(url);
+            if(StringUtils.isEmpty(jsonData)){
+                return null;
+            }
+            //解析json,生成前端所需要的json数据
+            EasyUIResult easyUIResult = EasyUIResult.formatToList(jsonData, Content.class);
+            List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
+
+            for (Content content : (List<Content>) easyUIResult.getRows()) {
+                Map<String, Object> map = new LinkedHashMap<String, Object>();
+                map.put("srcB", content.getPic());
+                map.put("height", 240);
+                map.put("alt", content.getTitle());
+                map.put("width", 670);
+                map.put("src", content.getPic());
+                map.put("widthB", 550);
+                map.put("href", content.getUrl());
+                map.put("heightB", 240);
+
+                result.add(map);
+            }
+            return MAPPER.writeValueAsString(result);
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+}

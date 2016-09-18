@@ -3,16 +3,17 @@ package com.taotao.manage.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.github.abel533.entity.Example;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.taotao.common.bean.EasyUIResult;
+import com.taotao.common.service.ApiService;
 import com.taotao.manage.mapper.ItemMapper;
 import com.taotao.manage.pojo.Item;
 import com.taotao.manage.pojo.ItemDesc;
-import com.taotao.manage.pojo.ItemParam;
 import com.taotao.manage.pojo.ItemParamItem;
 
 @Service
@@ -26,9 +27,15 @@ public class ItemService extends BaseService2<Item> {
     @Autowired
     private ItemParamItemService itemParamItemService;
     
+
+    @Autowired
+    private ApiService apiService;
+    
     @Autowired
     private ItemMapper itemMapper;
     
+    @Value("${TAOTAO_WEB_URL}")
+    private String TAOTAO_WEB_URL;
     
     //查询商品的service层
     public EasyUIResult queryPageList(Integer page, Integer rows) {
@@ -58,6 +65,17 @@ public class ItemService extends BaseService2<Item> {
         //修改商品规格参数数据
         this.itemParamItemService.updateItemParamItem(item.getId(),itemParams);
         
+        try{
+            //通知其他系统该商品已经更新
+            String url = TAOTAO_WEB_URL + "/item/cache"+item.getId() + ".html";
+//            System.out.println(url+"=============================================");
+            
+            this.apiService.doPost(url, null);
+                   
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        
     }
 
     public void saveItem(Item item, String desc, String itemParams) {
@@ -78,4 +96,5 @@ public class ItemService extends BaseService2<Item> {
         itemParamItem.setParamData(itemParams);
         this.itemParamItemService.save(itemParamItem);
     }
+
 }

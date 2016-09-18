@@ -1,0 +1,18 @@
+package com.taotao.web.service;
+
+import com.taotao.common.service.ApiService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+@Service
+public class IndexService {
+    @Autowired
+    private ApiService apiServie;
+    
+    @Value("${TAOTAO_MANAGE_URL}")
+    private String TAOTAO_MANAGE_URL;
+    
+    @Value("${INDEX_AD1_URL}")
+    private String 
+}

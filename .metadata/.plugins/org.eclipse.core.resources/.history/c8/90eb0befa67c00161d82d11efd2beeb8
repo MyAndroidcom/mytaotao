@@ -1,0 +1,12 @@
+package com.taotao.web.service;
+
+import com.taotao.common.service.ApiService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class IndexService {
+    @Autowired
+    private ApiService apiServie;
+    
+}

@@ -5,36 +5,59 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.taotao.common.bean.ItemCatData;
 import com.taotao.common.bean.ItemCatResult;
+import com.taotao.common.service.RedisService;
 import com.taotao.manage.mapper.ItemCatMapper;
 import com.taotao.manage.pojo.ItemCat;
 
 @Service
-public class ItemCatService extends BaseService2<ItemCat>{
+public class ItemCatService extends BaseService2<ItemCat> {
 
     @Autowired
     private ItemCatMapper itemCatMapper;
-    
+
     // 根据父节点id查询商品类目列表
-    public List<ItemCat> queryItemCat(Long parentId){
+    public List<ItemCat> queryItemCat(Long parentId) {
         ItemCat itemCat = new ItemCat();
         itemCat.setParentId(parentId);
         return this.itemCatMapper.select(itemCat);
     }
-    
-    
-    
+
+    @Autowired
+    private RedisService redisService;
+
+    private static final ObjectMapper MAPPER = new ObjectMapper();
+
+    private static final String REDIS_KEY = "TAOTAO_MANAGE_ITEM_CAT_ALL";// 最佳实践，项目名_模块名_业务名
+
+    private static final Integer REDIS_TIME = 60 * 60 * 24 * 30 * 3;
+
     /**
      * 全部查询，并且生成树状结构
-     * 
+     *设置缓存不能影响正常逻辑
      * @return
      */
     public ItemCatResult queryAllToTree() {
         ItemCatResult result = new ItemCatResult();
+        try{
+         // 先从缓存中命中，如果命中的话返回，没有命中，程序继续执行
+            String cacheData = this.redisService.get(REDIS_KEY);
+            if(StringUtils.isNotEmpty(cacheData)){
+                //命中,序列化为json数据
+                return MAPPER.readValue(cacheData, ItemCatResult.class);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        
+
         // 全部查出，并且在内存中生成树形结构
         List<ItemCat> cats = super.queryAll();
 
@@ -81,7 +104,18 @@ public class ItemCatService extends BaseService2<ItemCat>{
                 break;
             }
         }
+        
+        
+   
+        
+        
+        try{
+            //将结果集写入缓存中,序列化为json数据
+            this.redisService.set(REDIS_KEY, MAPPER.writeValueAsString(result), REDIS_TIME);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         return result;
-}
+    }
 
 }

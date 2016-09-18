@@ -1,0 +1,9 @@
+package com.taotao.web.service;
+
+public class Snippet {
+    public static void main(String[] args) {
+         // 出错 500
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
+}
+
